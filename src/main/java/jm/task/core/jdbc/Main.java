@@ -5,6 +5,7 @@ import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
+
     private static final UserService userService = new UserServiceImpl();
     private static final User user1 = new User("Nikol", "Krit", (byte) 50);
     private static final User user2 = new User("Kukla", "Voodu", (byte) 24);
@@ -12,10 +13,10 @@ public class Main {
     private static final User user4 = new User("Klara", "Ponchik", (byte) 26);
 
     public static void main(String[] args) {
-//
+
         userService.createUsersTable();
 
-//        userService.saveUser(user1.getName(), user1.getLastName(), user1.getAge());
+        userService.saveUser(user1.getName(), user1.getLastName(), user1.getAge());
 
         userService.saveUser(user2.getName(), user2.getLastName(), user2.getAge());
 
@@ -32,6 +33,7 @@ public class Main {
         userService.cleanUsersTable();
 
         userService.dropUsersTable();
+
 
     }
 }
