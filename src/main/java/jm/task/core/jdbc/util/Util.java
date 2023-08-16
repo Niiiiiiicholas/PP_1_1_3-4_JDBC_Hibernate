@@ -42,18 +42,3 @@ public class Util {
     }
 }
 
-
-//    public static Connection getConnection() {
-//        Connection connection = null;
-//        try {
-//            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-//            if (!connection.isClosed()) {
-//                System.out.println("We are connected!");
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            System.out.println("there is no connection... Exception!");
-//        }
-//        return connection;
-//    }
-//}
