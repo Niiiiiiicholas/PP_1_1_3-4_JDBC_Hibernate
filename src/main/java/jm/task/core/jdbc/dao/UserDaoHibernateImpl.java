@@ -19,7 +19,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void createUsersTable() {
         try(Session session = sessionFactory.openSession()){
             Transaction transaction = session.beginTransaction();
-            session.createNativeQuery("CREATE TABLE IF NOT EXISTS forkata.users" +
+            session.createNativeQuery("CREATE TABLE IF NOT EXISTS users" +
                     " (id mediumint not null auto_increment, name VARCHAR(50), " +
                     "lastname VARCHAR(50), " +
                     "age tinyint, " +
@@ -35,7 +35,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void dropUsersTable() {
         try (Session session = sessionFactory.openSession()){
             Transaction transaction = session.beginTransaction();
-            session.createNativeQuery("DROP TABLE IF EXISTS forkata.users").executeUpdate();
+            session.createNativeQuery("DROP TABLE IF EXISTS users").executeUpdate();
             transaction.commit();
             System.out.println("Таблица удалена");
         } catch (HibernateException e) {
@@ -91,7 +91,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void cleanUsersTable() {
         try  (Session session = sessionFactory.openSession()){
             Transaction transaction = session.beginTransaction();
-            session.createNativeQuery("TRUNCATE TABLE forkata.users;").executeUpdate();
+            session.createNativeQuery("TRUNCATE TABLE users;").executeUpdate();
             transaction.commit();
             System.out.println("Таблица очищена");
         } catch (HibernateException e) {
